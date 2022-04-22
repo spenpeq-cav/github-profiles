@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Github Profiles</h1>
+    <div className="text-center bg-slate-700">
+      <h1 className='text-3xl font-bold text-slate-300'>Github Profiles</h1>
     </div>
   );
 }
