@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from './components/NavBar';
 
 function App() {
   return (
-    <div className="text-center bg-slate-700">
-      <h1 className='text-3xl font-bold text-slate-300'>Github Profiles</h1>
+    <div className="bg-zinc-300 h-screen px-8 py-2">
+      <Navbar />
     </div>
   );
 }
