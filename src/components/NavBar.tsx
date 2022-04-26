@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ProfileData } from "../App"
 
 type NavProps = {
@@ -6,10 +7,11 @@ type NavProps = {
 };
 
 function Navbar(props: NavProps) {
+    const [profileQuery, setProfileQuery] = useState("")
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        const response = await fetch('https://api.github.com/users/spenpeq')
+        const response = await fetch('https://api.github.com/users/' + profileQuery)
         const data = await response.json()
         props.passProfileData(data)
 
@@ -24,7 +26,9 @@ function Navbar(props: NavProps) {
                 Github Profiles
             </h1>
             <form className='text-zinc-800 w-64 text-right' onSubmit={handleSubmit}>
-                <input type='text' placeholder='Search profile...' className="rounded-sm w-1/2" />
+                <input value={profileQuery} onChange={e => {
+                    setProfileQuery(e.target.value);
+                }} type='text' placeholder='Search profile...' className="rounded-sm w-1/2" />
                 <button type="submit" className="bg-cyan-400 rounded-sm px-2 ml-1">Search</button>
             </form>
         </div>
