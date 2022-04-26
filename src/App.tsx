@@ -28,7 +28,7 @@ function App() {
     <div className="bg-zinc-300 h-max px-8 py-2">
       <Navbar passProfileData={setProfileData} />
       <BannerImage />
-      <ProfileHeader />
+      <ProfileHeader avatar_url={profileData.avatar_url} name={profileData.name} />
       <About bio={profileData.bio} location={profileData.location} />
       <MyProjects />
     </div>

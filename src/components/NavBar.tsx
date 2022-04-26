@@ -12,7 +12,7 @@ function Navbar(props: NavProps) {
         const data = await response.json()
         props.passProfileData(data)
     }
-    
+
     return (
         <div className="flex items-center justify-between h-10">
             <h1 className='text-xl font-bold text-zinc-800 text-left'>
