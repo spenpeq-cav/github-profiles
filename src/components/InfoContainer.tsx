@@ -1,5 +1,5 @@
 type InfoContainerProps = {
-    children: React.ReactNode; // 👈️ type children
+    children: React.ReactNode;
 };
 
 function InfoContainer(props: InfoContainerProps) {
