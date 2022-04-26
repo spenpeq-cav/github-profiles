@@ -2,6 +2,7 @@ import { ProfileData } from "../App"
 
 type NavProps = {
     passProfileData: React.Dispatch<React.SetStateAction<ProfileData>>
+    passRepoData: React.Dispatch<React.SetStateAction<never[]>>
 };
 
 function Navbar(props: NavProps) {
@@ -11,6 +12,10 @@ function Navbar(props: NavProps) {
         const response = await fetch('https://api.github.com/users/spenpeq')
         const data = await response.json()
         props.passProfileData(data)
+
+        const repoResponse = await fetch(data.repos_url)
+        const repoData = await repoResponse.json()
+        props.passRepoData(repoData)
     }
 
     return (

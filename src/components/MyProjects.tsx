@@ -1,27 +1,28 @@
 import InfoContainer from "./InfoContainer"
 
-function MyProjects() {
+type MyProjectsProps = {
+    repoData: never[]
+}
+
+function MyProjects(props: MyProjectsProps) {
+
     return (
         <InfoContainer>
             <h2 className="font-bold pb-6 text-lg">My Projects</h2>
-            <div className="grid grid-cols-4 text-sm">
-                <div className="">
-                    <h3 className="font-semibold pb-2">Name</h3>
-                    <p>Project #1</p>
-                </div>
-                <div className="">
-                    <h3 className="font-semibold pb-2">Language</h3>
-                    <p>Javascript</p>
-                </div>
-                <div className="">
-                    <h3 className="font-semibold pb-2">Forks</h3>
-                    <p>0</p>
-                </div>
-                <div className="">
-                    <h3 className="font-semibold pb-2">Watchers</h3>
-                    <p>0</p>
-                </div>
+            <div className="grid grid-cols-10 text-sm">
+                <h3 className="font-semibold pb-2 col-span-5">Name</h3>
+                <h3 className="font-semibold pb-2 col-span-3">Language</h3>
+                <h3 className="font-semibold pb-2 col-span-1 text-center">Forks</h3>
+                <h3 className="font-semibold pb-2 col-span-1 text-center">Watchers</h3>
             </div>
+            {props.repoData.map((repo: any) => (
+                <div className="text-sm border-b-2 border-slate-600 py-2 grid grid-cols-10">
+                    <p className="col-span-5">{repo.name}</p>
+                    <p className="col-span-3">{repo.language}</p>
+                    <p className="col-span-1 text-center">{repo.forks}</p>
+                    <p className="col-span-1 text-center">{repo.watchers}</p>
+                </div>
+            ))}
         </InfoContainer>
     )
 
