@@ -24,14 +24,16 @@ function App() {
 
   const [profileData, setProfileData] = useState<ProfileData>(emptyProfileData)
   const [repoData, setRepoData] = useState([])
+  const [aboutActive, setAboutActive] = useState<boolean>(true)
+  const [projectsActive, setProjectsActive] = useState<boolean>(false)
   
   return (
     <div className="bg-zinc-300 h-max px-8 py-2">
       <Navbar passProfileData={setProfileData} passRepoData={setRepoData} />
       <BannerImage />
-      <ProfileHeader avatar_url={profileData.avatar_url} name={profileData.name} />
-      <About bio={profileData.bio} location={profileData.location} />
-      <MyProjects repoData={repoData} />
+      <ProfileHeader avatar_url={profileData.avatar_url} name={profileData.name} passAboutActive={setAboutActive} passProjectsActive={setProjectsActive} />
+      <About active={aboutActive} bio={profileData.bio} location={profileData.location} />
+      <MyProjects active={projectsActive} repoData={repoData} />
     </div>
   );
 }
