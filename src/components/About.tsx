@@ -11,9 +11,9 @@ function About(props: AboutProps) {
         <>
             { props.active ? 
             <InfoContainer>
-                <h2 className="font-bold pb-6 text-lg">About</h2>
-                <p>{props.bio !== null ? props.bio : "No bio"}</p>
-                <p>{props.location !== null ? props.location : "No location"}</p>
+                <h2 className="font-bold pb-6 text-xl text-zinc-900">About</h2>
+                <p className="pb-2 text-lg text-zinc-900">{props.bio !== null ? props.bio : "No bio"}</p>
+                <p className="text-lg text-zinc-900">{props.location !== null ? props.location : "No location"}</p>
             </InfoContainer> : <></> }
         </>
         

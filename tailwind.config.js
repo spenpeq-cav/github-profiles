@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'banner-image': "url('https://community.khoros.com/t5/image/serverpage/image-id/164425iE641E9340947FE57/image-size/large/is-moderation-mode/true?v=v2&px=999')",
+        'banner-image': "url('https://cdn.neow.in/news/images/uploaded/2020/12/1608232185_github_logo_1.jpg')",
       }
     },
   },

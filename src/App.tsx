@@ -28,7 +28,7 @@ function App() {
   const [projectsActive, setProjectsActive] = useState<boolean>(false)
   
   return (
-    <div className="bg-zinc-300 h-max px-8 py-2">
+    <div className="bg-zinc-900 h-max px-8 py-2">
       <Navbar passProfileData={setProfileData} passRepoData={setRepoData} />
       <BannerImage />
       <ProfileHeader avatar_url={profileData.avatar_url} name={profileData.name} passAboutActive={setAboutActive} passProjectsActive={setProjectsActive} />
